@@ -10,8 +10,8 @@
 - /opt/openstack/nova-cert/: /etc/nova
 - /opt/openstack/log/nova-cert/: /var/log/nova/
 
-# 启动glance
-docker run -d --name nova-cert -p 8774:8774 \
+# 启动nova-conductor
+docker run -d --name nova-cert \
     -v /opt/openstack/nova-cert/:/etc/nova \
     -v /opt/openstack/log/nova-cert/:/var/log/nova/ \
     -e NOVA_DB=10.64.0.52 \
