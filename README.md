@@ -10,7 +10,7 @@
 - /opt/openstack/nova-cert/: /etc/nova
 - /opt/openstack/log/nova-cert/: /var/log/nova/
 
-# 启动nova-conductor
+# 启动nova-cert
 docker run -d --name nova-cert \
     -v /opt/openstack/nova-cert/:/etc/nova \
     -v /opt/openstack/log/nova-cert/:/var/log/nova/ \
