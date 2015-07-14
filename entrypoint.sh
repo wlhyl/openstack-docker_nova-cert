@@ -55,10 +55,5 @@ if [ ! -f /etc/nova/.complete ];then
 
     touch /etc/nova/.complete
 fi
-# 同步数据库
-echo 'select * from instances limit 1;' | mysql -h$NOVA_DB  -unova -p$NOVA_DBPASS nova
-if [ $? != 0 ];then
-    su -s /bin/sh -c "nova-manage db sync" nova
-fi
 
 /usr/bin/supervisord -n
