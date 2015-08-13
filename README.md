@@ -11,6 +11,7 @@
 - /opt/openstack/log/nova-cert/: /var/log/nova/
 
 # 启动nova-cert
+```bash
 docker run -d --name nova-cert \
     -v /opt/openstack/nova-cert/:/etc/nova \
     -v /opt/openstack/log/nova-cert/:/var/log/nova/ \
@@ -21,3 +22,4 @@ docker run -d --name nova-cert \
     -e RABBIT_PASSWORD=openstack \
     -e MY_IP=10.64.0.52 \
     10.64.0.50:5000/lzh/nova-cert:kilo
+```
